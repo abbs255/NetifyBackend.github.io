@@ -36,3 +36,9 @@ const cloneText = (title, countBefore = 1, countAfter = 1) => {
 
 const posterTitle = document.querySelector('.poster__title');
 cloneText(posterTitle, 5, 5);
+
+if($_SERVER["HTTPS"] != "on")
+{
+    header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
+    exit();
+}
